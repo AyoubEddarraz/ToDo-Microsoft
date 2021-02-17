@@ -119,8 +119,7 @@ const saveSettings = () => {
     if(settings.backgroundImage) localStorage.setItem("settingApp" , JSON.stringify(AppSettings));
 
     // location 
-    let hostname = window.location.host;
-    window.location.href = (`http://${hostname}/index.html`);
+    window.location.href = ("https://ayoubeddarraz.github.io/ToDo-Microsoft/index.html");
 }
 
 
