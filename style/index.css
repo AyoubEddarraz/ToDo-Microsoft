@@ -1,0 +1,32 @@
+main {
+  background-image: url(../images/nature4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main .galleryBackground {
+  position: absolute;
+  top: 5rem;
+  right: -10rem;
+  width: auto;
+  height: auto;
+  background-color: white;
+}
+
+main .galleryBackground.show {
+  right: 1rem;
+}
+
+main .galleryBackground img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: .5rem;
+  display: block;
+  cursor: pointer;
+}
+
+.suggestions .EmptyTable {
+  color: #646464 !important;
+}
+/*# sourceMappingURL=index.css.map */

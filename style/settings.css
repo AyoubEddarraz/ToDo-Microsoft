@@ -1,0 +1,932 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400&display=swap");
+ol, ul {
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+p {
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+* {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+}
+
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0;
+}
+
+.bre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shadow-sm, .bre {
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.bre {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  color: black;
+  font-size: 15px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.bre i {
+  z-index: 10;
+}
+
+.bre::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: none;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.bre:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.bre:active::after {
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1F1D2B;
+  font-family: 'Big Shoulders Display', cursive;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app aside {
+  position: relative;
+  height: 100vh;
+  background-color: #1F1D2B;
+  color: white;
+  -webkit-transition: left .3s ease-in-out;
+  transition: left .3s ease-in-out;
+}
+
+.app aside i.closeAside {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+}
+
+.app aside .showAside {
+  position: absolute;
+  top: 10%;
+  right: -30px;
+  border-radius: 0 50% 50% 0 !important;
+}
+
+.app aside h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+  margin: 1rem;
+}
+
+.app aside h1 i {
+  color: #d2dae2;
+}
+
+.app aside ul {
+  width: 100%;
+  height: auto;
+  margin: 3rem 0;
+  list-style: none;
+  color: white;
+}
+
+.app aside ul li {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background-color: none !important;
+  color: white;
+  padding: 0 1rem;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.app aside ul li[data-link="newList"] {
+  width: 50%;
+  border-radius: 5px;
+  background-color: #0985e336 !important;
+  color: #0984e3;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.app aside ul li[data-link="newList"]:hover {
+  color: #0984e3;
+}
+
+.app aside ul li[data-link="newList"]:hover::after {
+  width: 0 !important;
+}
+
+.app aside ul li i {
+  width: 30px;
+  font-size: 14px;
+}
+
+.app aside ul li a {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  z-index: 10;
+}
+
+.app aside ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+  z-index: -1;
+}
+
+.app aside ul li:hover {
+  color: white;
+}
+
+.app aside ul li:hover::after {
+  width: 100%;
+}
+
+.app aside ul li[data-link="home"]:hover {
+  background-color: #130f4041;
+}
+
+.app aside ul li[data-link="home"] i {
+  color: #130f40;
+}
+
+.app aside ul li[data-link="tout"]:hover {
+  background-color: #34e7e44d;
+}
+
+.app aside ul li[data-link="tout"] i {
+  color: #34e7e4;
+}
+
+.app aside ul li[data-link="important"]:hover {
+  background-color: #ffcccc;
+}
+
+.app aside ul li[data-link="important"] i {
+  color: #ffcccc;
+}
+
+.app aside ul li[data-link="effectuees"]:hover {
+  background-color: #0be88167;
+}
+
+.app aside ul li[data-link="effectuees"] i {
+  color: #0be881;
+}
+
+.app aside ul li[data-link="supprimer"]:hover {
+  background-color: #ff475623;
+}
+
+.app aside ul li[data-link="supprimer"] i {
+  color: #ff4757;
+}
+
+.app aside h5 {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+}
+
+.app main {
+  position: relative;
+  height: 100vh;
+  border-radius: 30px 0 0 30px;
+  padding: .7rem 1rem;
+}
+
+.app main ::-webkit-scrollbar {
+  width: 0;
+}
+
+.app main .title {
+  width: 100%;
+  height: auto;
+  padding-left: 1rem;
+  color: white;
+}
+
+.app main .title strong {
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.app main .moreOption {
+  width: 100%;
+  height: auto;
+  text-align: end;
+  padding: 1rem 0;
+  color: white;
+  cursor: pointer;
+}
+
+.app main .moreOption i.showAside {
+  visibility: hidden;
+}
+
+.app main .moreOption i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.app main .taches {
+  width: 100%;
+  height: 65vh;
+  overflow: hidden auto;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.app main .taches ul {
+  width: 100%;
+  height: 100%;
+}
+
+.app main .taches ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  line-height: 40px;
+  background-color: white;
+  padding: 0 1rem;
+  margin: 3px 0;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.app main .taches ul li:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.app main .taches ul li.effectuees {
+  background-color: #2f3542;
+  color: white;
+}
+
+.app main .taches ul li span.complated {
+  text-decoration: line-through;
+}
+
+.app main .taches ul li span {
+  max-width: 230px;
+  max-height: 40px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.app main .taches ul li i.fa-check-circle {
+  color: #0be881;
+}
+
+.app main .taches ul li i.fas.fa-star {
+  color: #ff4757;
+}
+
+.app main .taches ul li > * {
+  cursor: pointer;
+}
+
+.app main .taches ul li i {
+  font-size: 16px;
+}
+
+.app main .addTache {
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  width: 100%;
+  height: 40px;
+  padding: 0 2rem;
+}
+
+.app main .addTache .addOption {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  visibility: hidden;
+}
+
+.app main .addTache .addOption.show {
+  visibility: visible;
+}
+
+.app main .addTache .addOption i {
+  cursor: pointer;
+  color: grey;
+}
+
+.app main .addTache .addOption i.far.fa-check-circle.active {
+  color: #0be881;
+}
+
+.app main .addTache .addOption i.far.fa-star.active {
+  color: #ff4757;
+}
+
+.app main .addTache .addOption i.fas.fa-times {
+  position: absolute;
+  right: 1rem;
+  color: white;
+}
+
+.app main .addTache .add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+.app main .addTache .add.show {
+  border-radius: 0 0 5px 5px !important;
+}
+
+.app main .addTache .add i {
+  width: 10%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.app main .addTache .add input {
+  width: 90%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0 1rem;
+}
+
+.app main .textMenuTache {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 200px;
+  height: auto;
+  background-color: white;
+  color: grey;
+  overflow: hidden;
+  z-index: 10000;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.app main .textMenuTache.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.app main .textMenuTache li {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.app main .textMenuTache li:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+.app main .textMenuTache li.delete {
+  color: #ff4757;
+}
+
+.app main .textMenuTache li.delete:hover {
+  background-color: rgba(255, 71, 87, 0.1);
+}
+
+.app main .textMenuTache i {
+  width: 30px;
+}
+
+.app .suggestions {
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  background-color: #ecf0f1;
+  top: 0;
+  right: -300px;
+  display: none;
+  -webkit-transition: right .3s ease-in-out;
+  transition: right .3s ease-in-out;
+}
+
+.app .suggestions.show {
+  display: block;
+  right: 0 !important;
+}
+
+.app .suggestions .head {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app .suggestions .head i.actualiser {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #0985e336;
+  color: #0984e3;
+  border-radius: 5px;
+}
+
+.app .suggestions .head i {
+  cursor: pointer;
+}
+
+.app .suggestions .tachesSuggestions {
+  width: 100%;
+  height: 90vh;
+  overflow: hidden auto;
+}
+
+.app .suggestions .tachesSuggestions::-webkit-scrollbar {
+  width: 0;
+}
+
+.app .suggestions .tachesSuggestions ul {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.app .suggestions .tachesSuggestions ul .tache {
+  width: 95%;
+  margin: 0 auto;
+  text-align: start;
+}
+
+.app .suggestions .tachesSuggestions ul .tache .desc_tache {
+  height: auto;
+  padding: 1rem;
+  display: none;
+}
+
+.app .suggestions .tachesSuggestions ul .tache .show {
+  display: block !important;
+}
+
+.app .suggestions .tachesSuggestions ul .tache li {
+  width: 95%;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  margin: 5px auto;
+  padding: 0 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.app .suggestions .tachesSuggestions ul .tache li p {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.app .suggestions .tachesSuggestions ul .tache li i {
+  cursor: pointer;
+  font-size: 15px;
+  color: grey;
+}
+
+.app .suggestions .tachesSuggestions ul .tache li i.fas.fa-plus {
+  color: #0984e3;
+}
+
+.app .EmptyTable {
+  position: relative;
+  top: 40%;
+  -webkit-transform: translate(0, -40%);
+          transform: translate(0, -40%);
+  width: 60%;
+  height: auto;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+  letter-spacing: .5px;
+}
+
+.app .EmptyTable img {
+  width: 100px;
+  height: 100px;
+}
+
+.app .hideTableEmpty {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    border-radius: 0 !important;
+  }
+  main i.showAside {
+    visibility: visible !important;
+  }
+  aside i.closeAside {
+    display: block !important;
+  }
+  aside.showAsideAbsolute {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+  }
+  aside.hideAndShow {
+    display: none;
+  }
+}
+
+body {
+  background-color: #1F1D2B;
+}
+
+.app main {
+  background-color: #252836;
+  border-radius: 30px 0 0 30px;
+  overflow: hidden scroll;
+}
+
+.app main::-webkit-scrollbar {
+  width: 0;
+}
+
+.app main .settings {
+  color: white;
+}
+
+.app main .settings h4 {
+  font-size: 30px;
+  margin: 1.5rem 2rem;
+}
+
+.app main .settings .sectionTitle {
+  font-size: 20px;
+  color: rgba(128, 128, 128, 0.3);
+  text-transform: uppercase;
+}
+
+.app main .settings ul li {
+  width: 100%;
+  height: 40px;
+  background-color: #377def5b;
+  margin: 10px 0;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.app main .settings ul li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.app main .settings ul li h5 {
+  min-width: 60px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.app main .settings ul li span.tacheCount, .app main .settings ul li h5.tacheCount {
+  color: #0be881;
+}
+
+.app main .settings ul li h5.remove {
+  color: #ff4757;
+}
+
+.app main .settings ul li i.fa-trash.remove {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 0, 0, 0.226);
+  color: #ff4757;
+  border-radius: 5px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.app main .settings .settingsOne {
+  padding: 0 2rem;
+}
+
+.app main .settings .settingsOne .clearAll {
+  position: relative;
+  width: 65%;
+  height: 190px;
+  border-radius: 20px;
+  background-color: #216FED;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.app main .settings .settingsOne .clearAll::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.app main .settings .settingsOne .clearAll .percentage {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: #377DEF;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.app main .settings .settingsOne .clearAll .percentage::after {
+  content: "100%";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.app main .settings .settingsOne .clearAll .info strong {
+  letter-spacing: 1px;
+}
+
+.app main .settings .settingsOne .clearAll .info p {
+  color: #d4d4d4;
+}
+
+.app main .settings .settingsOne .clearAll button {
+  width: 80%;
+  height: 40px;
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+  background-color: #ff4756bd;
+  color: white;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.app main .settings .settingsOne .clearAll button:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.app main .settings .settingsOne .tableExsiste {
+  width: 65%;
+  margin: 2rem 0;
+}
+
+.app main .settings .settingsTwo {
+  padding: 0 1rem;
+}
+
+.app main .settings .settingsTwo .galleryBackground {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.app main .settings .settingsTwo .galleryBackground img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: .5rem;
+  cursor: pointer;
+}
+
+.app main .settings .settingsTwo .galleryBackground img:active {
+  border: 3px solid white;
+}
+
+.app main .settings .settingsTwo .sauvegarder {
+  margin: 4rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.app main .settings .settingsTwo .sauvegarder .ResetBtn {
+  background-color: transparent !important;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.app main .settings .settingsTwo .sauvegarder .ResetBtn a {
+  color: white;
+}
+
+.app main .settings .settingsTwo .sauvegarder button {
+  width: 200px;
+  height: 50px;
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+  background-color: #525298;
+  color: white;
+  margin: 0 2rem;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.app main .settings .settingsTwo .sauvegarder button:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .clearAll {
+    width: 100% !important;
+    height: 200px !important;
+  }
+  .tableExsiste {
+    width: 100% !important;
+  }
+}
+/*# sourceMappingURL=settings.css.map */

@@ -1,0 +1,572 @@
+@import "./colors";
+@import "./global";
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400&display=swap');
+
+body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $asideSettings;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// App 
+
+.app{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+    // Aside 
+    aside{
+        position: relative;
+        height: 100vh;
+        background-color: $asideSettings;
+        color: white;
+        transition: left .3s ease-in-out;
+
+        i.closeAside{
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+        }
+
+        .showAside{
+            position: absolute;
+            top : 10%;
+            right: -30px;
+            border-radius: 0 50% 50% 0 !important;
+        }
+
+        h1{
+            font-size: 25px;
+            text-transform: uppercase;
+            margin: 1rem;
+
+            i{
+                color: #d2dae2;
+            }
+        }
+
+        ul{
+            width: 100%;
+            height: auto;
+            margin: 3rem 0;
+            list-style: none;
+            color: white;
+
+            li{
+                position: relative;
+                width: 100%;
+                height: 35px;
+                line-height: 35px;
+                background-color: none !important;
+                color: white;
+                padding:  0 1rem;
+                cursor: pointer;
+                z-index: 0;
+
+                &[data-link="newList"]{
+                    width: 50%;
+                    border-radius: 5px;
+                    background-color: #0985e336 !important;
+                    color: #0984e3;
+                    margin: 0 auto;
+                    margin-top: 2rem;
+
+                    &:hover{
+                        color: #0984e3;
+                    }
+
+                    &:hover::after{
+                        width: 0 !important;
+                    }
+
+                }
+
+                i{
+                    width: 30px;
+                    font-size: 14px;
+                }
+
+                a{
+                    width: 100%;
+                    height: 100%;
+                    font-size: 15px;
+                    z-index: 10;
+                }
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 0;
+                    background-color: rgba(0, 0, 0, .1);
+                    transition: width .3s ease-in-out;
+                    z-index: -1;
+                }
+
+                &:hover{
+                    color: white;
+                }
+
+                &:hover::after{
+                    width: 100%;
+                }
+
+                // data link hover and icone color
+                @each $data , $color , $iconeColor in (home , $color10 , $color7) , (tout , $color4 , $color1) , (important , $important , $important) , (effectuees , $color9 , $color8) , (supprimer , $color6 , $color3) {
+                    // data link hover
+                    &[data-link="#{$data}"]:hover{
+                        background-color: $color;
+                    }
+                    // Icone Color
+                    &[data-link="#{$data}"] i {
+                        color: $iconeColor;
+                    }
+                }
+            }
+
+        }
+
+        h5{
+            position: absolute;
+            bottom: 1rem;
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+        }
+
+    }
+
+    main{
+        position: relative;
+        height: 100vh;
+        border-radius: 30px 0 0 30px;
+        padding: .7rem 1rem;
+
+        & ::-webkit-scrollbar{
+            width: 0;
+        }
+
+        .title{
+            width: 100%;
+            height: auto;
+            padding-left: 1rem;
+            color: white;
+    
+            strong{
+                font-size: 25px;
+                letter-spacing: 1px;
+            }
+    
+        }
+
+        .moreOption{
+            width: 100%;
+            height: auto;
+            text-align: end;
+            padding: 1rem 0;
+            color: white;
+            cursor: pointer;
+
+            i.showAside{
+                visibility: hidden;
+            }
+
+            i{
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                border-radius: 5px;
+                background-color: $shadow2;
+            }
+
+        }
+
+        .taches{
+            width: 100%;
+            height: 65vh;
+            overflow: hidden auto;
+            padding: 1rem;
+            margin: 1rem 0;
+            // background-color: red;
+
+            ul{
+                width: 100%;
+                height: 100%;
+
+                li{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    line-height: 40px;
+                    background-color: white;
+                    padding: 0 1rem;
+                    margin: 3px 0;
+                    transition: background-color .3s ease-in-out;
+
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.9);
+                    }
+
+                    &.effectuees{
+                        background-color: $effectuees;
+                        color: white;
+                    }
+
+                    span.complated{
+                        text-decoration: line-through;
+                    }
+
+                    span{
+                        max-width: 230px;
+                        max-height: 40px;
+                        overflow: hidden ;
+                        text-align: center;
+                    }
+
+                    i.fa-check-circle{
+                        color: $color8;
+                    }
+
+                    i.fas.fa-star{
+                        color: $color3;
+                    }
+
+                    & > * {
+                        cursor: pointer;
+                    }
+
+                    i{
+                        font-size: 16px;
+                    }
+
+                }
+            }
+
+        }
+
+        .addTache{
+            position: absolute;
+            left: 0;
+            bottom: 3rem;
+            width: 100%;
+            height: 40px;
+            padding: 0 2rem;
+
+            .addOption{
+                position: relative;
+                width: 100%;
+                height: 40px;
+                background-color: $shadow2;
+                color: white;
+                display: flex;
+                align-items: center;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                visibility: hidden;
+
+
+                &.show{
+                    visibility: visible;
+                }
+
+                i{
+                    cursor: pointer;
+                    color: grey;
+
+                    &.far.fa-check-circle.active{
+                        color: $color8;
+                    }
+                    
+                    &.far.fa-star.active{
+                        color: $color3;
+                    }
+
+                }
+
+
+                i.fas.fa-times{
+                    position: absolute;
+                    right: 1rem;
+                    color: white;
+                }
+
+            }
+
+            .add{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .7);
+                border-radius: 5px;
+
+
+                &.show{
+                    border-radius: 0 0 5px 5px !important;
+                }
+
+                i{
+                    width: 10%;
+                    text-align: center;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                input{
+                    width: 90%;
+                    height: 100%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    padding: 0 1rem;
+                }
+
+            }
+        }
+
+        .textMenuTache{
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            width: 200px;
+            height: auto;
+            background-color: white;
+            color: grey;
+            overflow: hidden;
+            z-index: 10000;
+            transform: scale(0);
+            transform-origin: top left;
+            transition: transform .2s ease-in-out;
+
+            &.active{
+                transform: scale(1);
+            }
+
+            li{
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 10px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: rgba(128, 128, 128, 0.1);
+                }
+
+            }
+
+            li.delete{
+                color: $color3;
+
+                &:hover{
+                    background-color: rgba($color3 , .1);
+                }
+
+            }
+
+            i{
+                width: 30px;
+            }
+        }
+
+    }
+
+    .suggestions{
+        position: absolute;
+        width: 300px;
+        height: 100vh;
+        background-color: #ecf0f1;
+        top: 0;
+        right: -300px;
+        display: none;
+        transition: right .3s ease-in-out;
+
+        &.show{
+            display: block;
+            right: 0 !important;
+        }
+
+        .head{
+            width: 100%;
+            height: 40px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            i.actualiser{
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background-color: #0985e336;
+                color: #0984e3;
+                border-radius: 5px;
+            }
+
+            i{
+                cursor: pointer;
+            }
+        }
+
+        .tachesSuggestions{
+            width: 100%;
+            height: 90vh;
+            // background-color: red;
+            overflow: hidden auto;
+
+            &::-webkit-scrollbar{
+                width: 0;
+            }
+
+            ul{
+                list-style: none;
+                margin: 1rem 0;
+
+                .tache{
+                    width: 95%;
+                    margin: 0 auto;
+                    text-align: start;
+
+                    .desc_tache{
+                        height: auto;
+                        padding: 1rem;
+                        display: none;
+                    }
+
+                    .show{
+                        display: block !important;
+                    }
+
+                    li{
+                        width: 95%;
+                        height: 35px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        background-color: white;
+                        margin: 5px auto;
+                        padding: 0 10px;
+                        overflow: hidden;
+                        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    
+                        p{
+                            width: 100px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            overflow: hidden;
+                            cursor: pointer;
+                        }
+    
+                        i{
+                            cursor: pointer;
+                            font-size: 15px;
+                            color: grey;
+                        }
+    
+                        i.fas.fa-plus{
+                            color: #0984e3;
+                        }
+    
+    
+                    }
+                }
+                
+            }
+
+        }
+
+    }
+
+    .EmptyTable{
+        position: relative;
+        top: 40%;
+        transform: translate(0 , -40%);
+        width: 60%;
+        height: auto;
+        text-align: center;
+        color: white;
+        margin: 0 auto;
+        letter-spacing: .5px;
+
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        
+
+    }
+
+    .hideTableEmpty{
+        display: none !important;
+    }
+
+}
+
+
+@media screen and (max-width: 1000px){
+    main{
+        border-radius: 0 !important;
+
+        i.showAside{
+            visibility: visible !important;
+        }
+
+    }
+
+    aside{
+
+        i.closeAside{
+            display: block !important;
+        }
+
+        &.showAsideAbsolute{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+        }
+
+        &.hideAndShow{
+            display: none;
+        }
+
+    }
+    
+}
+
+@media screen and (max-width : 500px){
+    i.closeAddOption{
+        position: absolute;
+        top: -100%;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background-color: #0985e336;
+        color: #0984e3;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAA;EACA,gBAAgB,ECoBP,OAAO;CDnBnB",
+    "sources": [
+        "important.scss",
+        "_colors.scss"
+    ],
+    "names": [],
+    "file": "important.css"
+}

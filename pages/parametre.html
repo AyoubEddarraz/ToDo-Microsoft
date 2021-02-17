@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- index Style -->
+    <link rel="stylesheet" href="../style/style.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="../style/settings.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="app row">
+        <aside class="col-lg-3 hideAndShow">
+            <i class="fas fa-times closeAside showAside"></i>
+            <!-- title -->
+            <h1>ToDo List App <i class="fas fa-clipboard-list"></i></h1>
+            <!-- Show Aside -->
+            <div class="bre showAside" hidden><i class="fas fa-cog fa-spin"></i></div>
+            <!-- Option List -->
+            <ul>
+                <a href="../index.html"><li data-link="home"><i class="fas fa-home"></i>Ma journée</li></a>
+                <a href="tout.html"><li data-link="tout"><i class="fas fa-border-all"></i>Tout</li></a>
+                <a href="important.html"><li data-link="important"><i class="far fa-star"></i>Important</li></a>
+                <a href="effectuees.html"><li data-link="effectuees"><i class="fas fa-check-circle"></i>Effectuées</li></a>
+                <a href="supprimer.html"><li data-link="supprimer"><i class="fas fa-trash"></i>Supprimer</li></a>
+                <a href="parametre.html"><li data-link="newList"><i class="fas fa-cog"></i>Paramètre</li></a>
+            </ul>
+            <!-- Copyright -->
+            <h5>created by ayoub eddarraz</h5>
+        </aside>
+    
+        <main class="col-lg-9">
+            <div class="moreOption">
+                <i class="fas fa-bars showAside mx-1"></i>
+            </div>
+            <div class="row settings">
+                <h4>Settings</h4>
+                <div class="col-lg-6 settingsOne">
+                    <h4 class="sectionTitle">supprimer tout</h4>
+                    <div class="clearAll shadow-sm">
+                        <div class="percentage mx-3"></div>
+                        <div class="info mx-3">
+                            <strong>Supprimer Tout</strong>
+                            <p>tout les donneés sont supprimer.</p>
+                        </div>
+                        <button class="removeAllLists">Commancer la suppression</button>
+                    </div>
+                    <h4 class="sectionTitle">counteur des lists</h4>
+                    <div class="tableExsiste">
+                        <ul>
+                            <li> <i class="fas fa-home"></i><span class="name">Ma journée</span><span data-name="majournee" class="tacheCount"></span></li>
+                            <li> <i class="fas fa-star"></i><span class="name">Important</span><span data-name="important" class="tacheCount"></span></li>
+                            <li> <i class="fas fa-check-circle"></i><span class="name">Effectuées</span><span data-name="effectuees" class="tacheCount"></span></li>
+                            <li> <i class="fas fa-trash"></i><span class="name">Supprimer</span><span data-name="remove" class="tacheCount"></span></li>
+                            <li> <i class="fas fa-border-all"></i><span class="name">Tout</span><span data-name="tout" class="tacheCount"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 settingsTwo">
+                    <h4 class="sectionTitle">suppression des lists</h4>
+                    <div class="removetable">
+                        <ul>
+                            <li> <i class="fas fa-home"></i><h5 class="name">Ma journée</h5><h5 data-name="majournee" class="tacheCount remove"></h5> <i class="fas fa-trash remove removemajournee"></i></li>
+                            <li> <i class="fas fa-star"></i><h5 class="name">Important</h5><h5 data-name="important" class="tacheCount remove"></h5> <i class="fas fa-trash remove removeImportant"></i></li>
+                            <li> <i class="fas fa-check-circle"></i><h5 class="name">Effectuées</h5><h5 data-name="effectuees" class="tacheCount remove"></h5> <i class="fas fa-trash remove removeEffectues"></i></li>
+                            <li> <i class="fas fa-trash"></i><h5 class="name">Supprimer</h5><h5 data-name="remove" class="tacheCount remove"></h5> <i class="fas fa-trash remove removeRemoveList"></i></li>
+                        </ul>
+                    </div>
+                    <h4 class="sectionTitle">changer l'arriére plan</h4>
+                    <div class="galleryBackground">
+                        <img data-name="nature" src="../images/nature.jpg" alt="nature image">
+                        <img data-name="nature2" src="../images/nature2.jpg" alt="nature image">
+                        <img data-name="nature3" src="../images/nature3.jpg" alt="nature image">
+                        <img data-name="nature4" src="../images/nature4.jpg" alt="nature image">
+                        <img data-name="nature5" src="../images/nature5.jpg" alt="nature image">
+                        <img data-name="nature6" src="../images/nature6.jpg" alt="nature image">
+                    </div>
+                    <!-- Suavgrader les modifications -->
+                    <div class="sauvegarder">
+                        <button class="ResetBtn">Reset</button>
+                        <button class="saveAllButton">sauvegarder les modifications</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Main Script -->
+    <script src="../script/settings.js" type="module"></script>
+    <!-- mainScript -->
+    <script src="../script/main.js" type="module"></script>
+
+</body>
+</html>

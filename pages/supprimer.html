@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- aos animation on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- main Style -->
+    <link rel="stylesheet" href="../style/style.css">
+    <!-- effectuees style -->
+    <link rel="stylesheet" href="../style/supprimer.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="app row">
+        <aside class="col-lg-3 hideAndShow">
+            <i class="fas fa-times closeAside showAside"></i>
+            <!-- title -->
+            <h1>ToDo List App <i class="fas fa-clipboard-list"></i></h1>
+            <!-- Option List -->
+            <ul>
+                <a href="../index.html"><li data-link="home"><i class="fas fa-home"></i>Ma journée</li></a>
+                <a href="tout.html"><li data-link="tout"><i class="fas fa-border-all"></i>Tout</li></a>
+                <a href="important.html"><li data-link="important"><i class="far fa-star"></i>Important</li></a>
+                <a href="effectuees.html"><li data-link="effectuees"><i class="fas fa-check-circle"></i>Effectuées</li></a>
+                <a href="supprimer.html"><li data-link="supprimer"><i class="fas fa-trash"></i>Supprimer</li></a>
+                <a href="parametre.html"><li data-link="newList"><i class="fas fa-cog"></i>Paramètre</li></a>
+            </ul>
+
+            <!-- Copyright -->
+            <h5>created by ayoub eddarraz</h5>
+        </aside>
+
+        <main class="col-lg-9">
+            <!-- More option -->
+            <div class="moreOption">
+                <i class="fas fa-bars showAside mx-1"></i>
+            </div>
+            <!-- La date de ma journeé -->
+            <div class="title">
+                <strong>Supprimer</strong><br>
+            </div>
+            <!-- AUCUNE TACHE -->
+            <div class="EmptyTable">
+                <img src="../images/todoEmpty.svg" alt="to do list empty" class="my-2" draggable="false"><br>
+                <strong>Ajouter une tache</strong>
+                <p>Vous n'avez pas encore des taches.</p>
+            </div>
+            <!-- Taches -->
+            <div class="taches">
+                <ul>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- Main Script -->
+    <script src="../script/supprimer.js" type="module"></script>
+
+</body>
+</html>

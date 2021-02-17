@@ -1,0 +1,237 @@
+@import "./style.scss";
+
+body{
+    background-color: $asideSettings;
+}
+
+.app{
+    main{
+        background-color: $settingsColor;
+        border-radius: 30px 0 0 30px;
+        overflow: hidden scroll;
+
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+
+        .settings{
+            color: white;
+
+            h4{
+                font-size: 30px;
+                margin: 1.5rem 2rem;
+            }
+
+            .sectionTitle{
+                font-size: 20px;
+                color: rgba(128, 128, 128, .3);
+                text-transform: uppercase;
+            }
+
+            ul{
+
+                li{
+                    width: 100%;
+                    height: 40px;
+                    background-color: $settings2Deg2;
+                    margin: 10px 0;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 1rem;
+                    cursor: pointer;
+                    transition: transform .3s ease-in-out;
+
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+
+                    h5{
+                        min-width: 60px;
+                        text-align: center;
+                        font-size: 16px;
+                    }
+
+                    span.tacheCount , h5.tacheCount{
+                        color: $color8;
+                    }
+
+                    h5.remove{
+                        color: $color3;
+                    }
+
+                    i.fa-trash.remove{
+                        width: 30px;
+                        height: 30px;
+                        background-color: rgba(255, 0, 0, 0.226);
+                        color: $color3;
+                        border-radius: 5px;
+                        line-height: 30px;
+                        text-align: center;
+                        font-size: 15px;
+                    }
+
+                }
+            }
+
+            .settingsOne{
+                padding: 0 2rem;
+                    
+                .clearAll{
+                    position: relative;
+                    width: 65%;
+                    height: 190px;
+                    border-radius: 20px;
+                    background-color: $settings2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    overflow: hidden;
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        right: -15px;
+                        top: -15px;
+                        width: 45px;
+                        height: 45px;
+                        background-color: white;
+                        border-radius: 50%;
+                    }
+
+                    .percentage{
+                        position: relative;
+                        width: 70px;
+                        height: 70px;
+                        background-color: $settings2Deg;
+                        border-radius: 50%;
+                        border: 3px solid white;
+
+                        &::after{
+                            content: "100%";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50% , -50%);
+                            font-size: 20px;
+                        }
+                    }
+
+                    .info{
+
+                        strong{
+                            letter-spacing: 1px;
+                        }
+
+                        p{
+                            color: rgb(212, 212, 212);
+                        }
+
+                    }
+
+                    button{
+                        width: 80%;
+                        height: 40px;
+                        border-radius: 9999px;
+                        border: none;
+                        outline: none;
+                        background-color: #ff4756bd;
+                        color: white;
+                        transition: transform .3s ease-in-out;
+
+                        &:active{
+                            transform: scale(1.1);
+                        }
+
+                    }
+
+                } 
+                
+                .tableExsiste{
+                    width: 65%;
+                    margin: 2rem 0;
+
+                }
+                
+            }
+
+            .settingsTwo{
+                padding: 0 1rem;
+
+                .galleryBackground{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    img{
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                        margin: .5rem;
+                        cursor: pointer;
+
+                        &:active{
+                            border: 3px solid white;
+                        }
+
+                    }
+
+                }
+
+                .sauvegarder{
+                    margin: 4rem 0;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+
+                    .ResetBtn{
+                        background-color: transparent !important;
+                        width: max-content;
+
+                        a{
+                            color: white;
+                        }
+                    }
+
+                    button{
+                        width: 200px;
+                        height: 50px;
+                        border-radius: 9999px;
+                        border: none;
+                        outline: none;
+                        background-color: $settings3;
+                        color: white;
+                        margin: 0 2rem;
+                        transition: transform .3s ease-in-out;
+
+                        &:active{
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }
+
+            }
+
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width : 768px){
+    .clearAll{
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    .tableExsiste{
+        width: 100% !important;
+    }
+}

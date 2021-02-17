@@ -1,0 +1,87 @@
+@import "./colors";
+
+ol , ul{
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+p{
+    margin: 0 !important;
+}
+
+a{
+    text-decoration: none !important;
+    color: black;
+
+    &:hover{
+        color: black;
+    }
+
+}
+
+*{
+    user-select: none !important;
+}
+
+.row{
+    margin: 0 !important;
+    padding: 0 !important;
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 0;
+}
+
+%flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+@mixin radiusElement($widthHeight , $backgroundColor , $color , $fontSize) {
+    width: $widthHeight#{px};
+    height: $widthHeight#{px};
+    color: $color;
+    font-size: $fontSize#{px};
+    background-color: $backgroundColor;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform .3s ease-in-out;
+    @extend %flexCenter;
+    @extend .shadow-sm;
+}
+
+.bre{
+    position: relative;
+    @include radiusElement(30, white , black , 15);
+
+    i{
+        z-index: 10;
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: none;
+        transition: transform .3s ease-in-out;
+    }
+
+    &:active{
+        transform: scale(1.1);
+    }
+
+    &:active::after{
+        background-color: $shadow;
+        transform: scale(1);
+    }
+
+}

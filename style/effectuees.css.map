@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAA;EACA,gBAAgB,ECmBJ,SAAS;CDbxB;;AAPD,AAGI,IAHA,CAGA,OAAO,CAAA;EACH,MAAM,EAAE,eAAe;CAC1B",
+    "sources": [
+        "effectuees.scss",
+        "_colors.scss"
+    ],
+    "names": [],
+    "file": "effectuees.css"
+}
