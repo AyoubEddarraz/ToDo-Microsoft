@@ -53,34 +53,34 @@ const showSuggestion = _ => suggestions.classList.toggle("show");
 suggestionIcone.forEach(suggestion => suggestion.addEventListener('click' , _ => showSuggestion()));
 
 // change background
-const changeback = (backgroundImage) => main.style.backgroundImage = (`url('../images/${backgroundImage}.jpg')`);
+// const changeback = (backgroundImage) => main.style.backgroundImage = (`url('../images/${backgroundImage}.jpg')`);
 
 // i use try because i waiting error from localStorage
-try{
-    let backgroundLocalStorage = JSON.parse(localStorage.getItem("settingApp")).MainBackground;
-    // change background if page load
-    changeback(backgroundLocalStorage);
-}catch{
-    // Do Samthing
-}
+// try{
+//     let backgroundLocalStorage = JSON.parse(localStorage.getItem("settingApp")).MainBackground;
+//     // change background if page load
+//     changeback(backgroundLocalStorage);
+// }catch{
+//     // Do Samthing
+// }
 
 // show change back component
-const showChangeBack = _ => galleryBackground.classList.toggle("show");
+// const showChangeBack = _ => galleryBackground.classList.toggle("show");
 
 // show change back Component event
-changeBackIcone.addEventListener('click' , _ => showChangeBack());
+// changeBackIcone.addEventListener('click' , _ => showChangeBack());
 
 // add event every image to change 
-imageGallry.forEach(image => {
-    image.addEventListener('click' , _ => {
-        let imageUrl = image.getAttribute("data-name");
-        changeback(imageUrl);
-        // change the value of Mainbackground
-        AppSettings.MainBackground = imageUrl;
-        // add to local storage
-        localStorage.setItem("settingApp" , JSON.stringify(AppSettings));
-    })
-})
+// imageGallry.forEach(image => {
+//     image.addEventListener('click' , _ => {
+//         let imageUrl = image.getAttribute("data-name");
+//         changeback(imageUrl);
+//         // change the value of Mainbackground
+//         AppSettings.MainBackground = imageUrl;
+//         // add to local storage
+//         localStorage.setItem("settingApp" , JSON.stringify(AppSettings));
+//     })
+// })
 
 // Add tache variables
 let addTacheInput = document.querySelector(".addTacheInput");

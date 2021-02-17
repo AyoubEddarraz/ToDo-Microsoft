@@ -73,7 +73,7 @@ let settings = {
     removeEffectues: false,
     removeRemoveList: false,
     removeAllLists: false,
-    backgroundImage: false
+    // backgroundImage: false
 }
 
 removemajournee.addEventListener('click' , () => {
@@ -97,17 +97,17 @@ removeAllLists.addEventListener('click' , () => {
 })
 
 // Change back 
-let galleryBackground = document.querySelectorAll(".galleryBackground img");
+// let galleryBackground = document.querySelectorAll(".galleryBackground img");
 
 // add event every image to change 
-galleryBackground.forEach(image => {
-    image.addEventListener('click' , _ => {
-        let imageUrl = image.getAttribute("data-name");
-        // change the value of Mainbackground
-        AppSettings.MainBackground = imageUrl;
-        settings.backgroundImage = true;
-    })
-})
+// galleryBackground.forEach(image => {
+//     image.addEventListener('click' , _ => {
+//         let imageUrl = image.getAttribute("data-name");
+//         // change the value of Mainbackground
+//         AppSettings.MainBackground = imageUrl;
+//         settings.backgroundImage = true;
+//     })
+// })
 
 // save settings 
 const saveSettings = () => {
@@ -116,7 +116,7 @@ const saveSettings = () => {
     if(settings.removeEffectues) localStorage.removeItem("complatedTaches");
     if(settings.removeRemoveList) localStorage.removeItem("removeTachesList");
     if(settings.removeAllLists) localStorage.clear();
-    if(settings.backgroundImage) localStorage.setItem("settingApp" , JSON.stringify(AppSettings));
+    // if(settings.backgroundImage) localStorage.setItem("settingApp" , JSON.stringify(AppSettings));
 
     // location 
     window.location.href = ("https://ayoubeddarraz.github.io/ToDo-Microsoft/index.html");
@@ -133,7 +133,7 @@ ResetBtn.addEventListener('click' , () => {
         removeEffectues: false,
         removeRemoveList: false,
         removeAllLists: false,
-        backgroundImage: false
+        // backgroundImage: false
     }
 })
 

@@ -655,7 +655,7 @@ body {
   display: none !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   main {
     border-radius: 0 !important;
   }
@@ -674,6 +674,21 @@ body {
   }
   aside.hideAndShow {
     display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  i.closeAddOption {
+    position: absolute;
+    top: -100%;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #0985e336;
+    color: #0984e3;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
   }
 }
 
